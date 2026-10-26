@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0B0D0F;
+  --bg-secondary: #141719;
+  --surface-elevated: #1C2022;
+  --text-primary: #F5F5F0;
+  --text-secondary: #A6ABA9;
+  --accent: #C6F36B;
+  --accent-hover: #B5E358;
+  --border-color: #303635;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #0B0D0F;
+  color: #F5F5F0;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0B0D0F;
+  color: #F5F5F0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #C6F36B;
+  color: #0B0D0F;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid #C6F36B;
+  outline-offset: 2px;
+}
+
+/* Custom discreet scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0D0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #303635;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #424A48;
+}
+
+/* Native accordion styling */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  list-style: none;
+}
+
+/* Smooth details animation support where available */
+details[open] > div.faq-content {
+  animation: detailsFade 0.25s ease-out;
+}
+
+@keyframes detailsFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
